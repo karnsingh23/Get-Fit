@@ -75,18 +75,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-.loader {
-  border: 2px solid transparent;
-  border-top-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}

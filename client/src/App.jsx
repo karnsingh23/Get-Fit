@@ -1,11 +1,16 @@
-import { useState } from 'react'
+import Authentication from "./pages/Authentication"
+import Navbar from "./components/Navbar"
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <h1 class="bg-blue-500 text-white p-4 rounded">Hello World</h1>
+    <Navbar/>
+    <Authentication/>
+      
     </>
   )
 }
