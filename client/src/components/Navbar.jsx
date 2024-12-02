@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import LogoImg from "../utils/Images/Logo.png";
+import LogoImg from "../../utils/Images/Logo.png";
 import { Link as LinkR, NavLink } from "react-router-dom";
 import { MenuRounded } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { logout } from "../redux/reducers/userSlice";
+import { logout } from "../../redux/reducers/userSlice";
 
 const Nav = styled.div`
   background-color: ${({ theme }) => theme.bg};

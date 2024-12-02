@@ -4,7 +4,7 @@ import WorkoutCard from "../components/cards/WorkoutCard";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers";
-import { getWorkouts } from "../api";
+import { getWorkouts } from "../../api";
 import { CircularProgress } from "@mui/material";
 import { useDispatch } from "react-redux";
 

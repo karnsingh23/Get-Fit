@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import TextInput from "./TextInput";
 import Button from "./Button";
-import { UserSignIn } from "../api";
+import { UserSignIn } from "../../api";
 import { useDispatch } from "react-redux";
-import { loginSuccess } from "../redux/reducers/userSlice";
+import { loginSuccess } from "../../redux/reducers/userSlice";
 
 const Container = styled.div`
   width: 100%;
