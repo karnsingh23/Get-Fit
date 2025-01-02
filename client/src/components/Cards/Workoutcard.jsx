@@ -2,6 +2,7 @@ import { FitnessCenterRounded, TimelapseRounded } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
 import axios from 'axios'
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 const Card = styled.div`
   flex: 1;
@@ -79,7 +80,7 @@ const DeleteButton = styled.button`
 `;
 
  export const Delete = (id)=>{
-  axios.delete(`http://localhost:8080/api/user/workout/${id}`)
+  axios.delete(`${BASE_URL}user/workout/${id}`)
   .then(()=>{alert("workout deleted Success")})
   .catch((error)=>{alert(error)})
   

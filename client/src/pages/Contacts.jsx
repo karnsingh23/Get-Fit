@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import heroContact from '../Assets/hero-contact.mp4';
 import styled from 'styled-components';
 import axios from 'axios';
+const BASE_URL = import.meta.env.VITE_BASE_URL
 
 // Styled Components
 const Section = styled.section`
@@ -156,7 +157,7 @@ function Contact() {
   const sendMessage = async(e)=>{
     e.preventDefault();
     try {
-      axios.post("http://localhost:8080/api/user/contact",{
+      axios.post(`${BASE_URL}user/contact`,{
         name,
         email,
         message
