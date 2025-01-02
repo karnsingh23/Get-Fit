@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import WorkoutCard from "../components/cards/WorkoutCard";
+import WorkoutCard from "../components/Cards/Workoutcard";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers";
@@ -72,7 +72,7 @@ const SecTitle = styled.div`
   font-weight: 500;
 `;
 
-const Workouts = () => {
+const Workouts = (Delete) => {
   const dispatch = useDispatch();
   const [todaysWorkouts, setTodaysWorkouts] = useState([]);
   const [loading, setLoading] = useState(false);

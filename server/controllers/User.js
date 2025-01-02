@@ -291,3 +291,4 @@ const calculateCaloriesBurnt = (workoutDetails) => {
   const caloriesBurntPerMinute = 5;
   return durationInMinutes * caloriesBurntPerMinute * weightInKg;
 };
+

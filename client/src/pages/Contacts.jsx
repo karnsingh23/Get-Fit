@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import heroContact from '../Assets/hero-contact.mp4';
 import styled from 'styled-components';
+import axios from 'axios';
 
 // Styled Components
 const Section = styled.section`
@@ -147,6 +148,28 @@ const Button = styled.button`
 `;
 
 function Contact() {
+
+  const [name,setName] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
+
+  const sendMessage = async(e)=>{
+    e.preventDefault();
+    try {
+      axios.post("http://localhost:8080/api/user/contact",{
+        name,
+        email,
+        message
+      })
+      alert("Message sent successfully")
+      
+    } catch (error) {
+      console.log(error)
+      alert("Failed to send message. Please try again.");
+    }
+  }
+
+
   return (
     <div className="container">
       {/* Scrollable Section */}
@@ -165,10 +188,10 @@ function Contact() {
           <Title>Reach Out to Us</Title>
           <Subtitle>Fill out the form below, and we’ll get back to you shortly.</Subtitle>
           <Form>
-            <Input type="text" placeholder="Your Name" required />
-            <Input type="email" placeholder="Your Email" required />
-            <Textarea placeholder="Your Message" rows="5" required></Textarea>
-            <Button type="submit">Send Message</Button>
+            <Input onChange={(e)=>{setName(e.target.value)}} type="text" placeholder="Your Name" required />
+            <Input onChange={(e)=>{setEmail(e.target.value)}} type="email" placeholder="Your Email" required />
+            <Textarea onChange={(e)=>{setMessage(e.target.value)}} placeholder="Your Message" rows="5" required></Textarea>
+            <Button onClick={sendMessage} type="submit">Send Message</Button>
           </Form>
         </FormSection>
       </Section>
